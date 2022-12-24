@@ -1,4 +1,5 @@
-﻿using GloboTicket.TicketManagement.Api.Services;
+﻿using GloboTicket.TicketManagement.Api.Middleware;
+using GloboTicket.TicketManagement.Api.Services;
 using GloboTicket.TicketManagement.Api.Utility;
 using GloboTicket.TicketManagement.Application;
 using GloboTicket.TicketManagement.Application.Contracts;
@@ -45,7 +46,9 @@ namespace GloboTicket.TicketManagement.Api
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            // app.UseRouting();
+
+            app.UseCustomExceptionHandler();
 
             app.UseCors("Open");
 
